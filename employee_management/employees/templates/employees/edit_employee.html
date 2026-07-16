@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Employee</title>
+</head>
+
+<body>
+
+<h2>Edit Employee</h2>
+
+<form method="POST">
+
+    {% csrf_token %}
+
+    <label>Emp ID</label>
+    <input type="text" name="emp_id" value="{{ employee.emp_id }}">
+    <br><br>
+
+
+    <label>Name</label>
+    <input type="text" name="name" value="{{ employee.name }}">
+    <br><br>
+
+
+    <label>Phone</label>
+    <input type="text" name="phone" value="{{ employee.phone }}">
+    <br><br>
+
+
+    <label>Email</label>
+    <input type="email" name="email" value="{{ employee.email }}">
+    <br><br>
+
+
+    <label>Salary</label>
+    <input type="text" name="salary" value="{{ employee.salary }}">
+    <br><br>
+
+
+    <label>Date of Join</label>
+    <input type="date" name="date_of_join" value="{{ employee.date_of_join|date:'Y-m-d' }}">
+    <br><br>
+
+
+    <label>Department</label>
+
+    <input type="text" 
+    name="department_name"
+    value="{{ department.department_name }}">
+    <br><br>
+
+
+    <label>Subject</label>
+
+    <input type="text" 
+    name="subject"
+    value="{{ department.subject }}">
+    <br><br>
+
+
+    <button type="submit">
+        Update
+    </button>
+
+
+</form>
+
+
+<a href="{% url 'dashboard' %}">
+    Back
+</a>
+
+
+</body>
+</html>
